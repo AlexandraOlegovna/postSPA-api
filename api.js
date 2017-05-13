@@ -27,6 +27,7 @@ api.resource('posts', {
 api.resource('likes', {
   create: async ctx => {
     let {id, num, type} = ctx.request.body
+    console.log(id, num, type);
     if (!(type != "+" || type != "-")) return ctx.throw(401, 'wrong data type')
 
     let c =  (type == "+") ? 1 : -1;
